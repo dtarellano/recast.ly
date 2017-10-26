@@ -10,6 +10,7 @@ class App extends React.Component {
     
     this.selectNewVideo = this.selectNewVideo.bind(this);
     this.getSearchInput = this.getSearchInput.bind(this);
+    this.callback = this.callback.bind(this);
   }
   
   componentDidMount() {
@@ -24,7 +25,6 @@ class App extends React.Component {
       url: 'https://www.googleapis.com/youtube/v3/search',
       data: data,
       success: function(data) {
-        console.log('my youtube data bro:', data);
         this.setState({
           data: data.items,
           videoDisplay: data.items[0]
@@ -32,16 +32,27 @@ class App extends React.Component {
       }.bind(this),
       dataType: 'json'
     });
-    
+  }
+  
+  callback(data) {
+    this.setState({
+      data: data.items,
+      videoDisplay: data.items[0]
+    });
   }
   
   getSearchInput(input) {
-    //debugger;
-    //console.log('SFI:', input);
     this.setState({
       query: input
     });
-    //console.log('should be updated query:', this.state.query);
+    let data = {
+      key: 'AIzaSyCE3Yh9-RTnlZ4CtoEdxr62mR26Cz_em0U',
+      q: input,
+      maxResults: 5,
+      part: 'snippet',
+      type: 'video'
+    };
+    searchYouTube(data, this.callback);
   }
   
   selectNewVideo(event, n) {
