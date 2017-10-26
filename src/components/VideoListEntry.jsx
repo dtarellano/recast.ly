@@ -1,11 +1,12 @@
 var VideoListEntry = (video) => (
-  //console.log('video:', video),
+  // console.log('VLE this', this),
+  // console.log('VLE video', video),
   <div className="video-list-entry media">
     <div className="media-left media-middle">
       <img className="media-object" src={video.item.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title" onClick={video.clickfunction}>{video.item.snippet.title}</div>
+      <div className="video-list-entry-title" onClick={video.clickfunction.bind(this, video.item)}>{video.item.snippet.title}</div>
       <div className="video-list-entry-detail">{video.item.snippet.description}</div>
     </div>
   </div>

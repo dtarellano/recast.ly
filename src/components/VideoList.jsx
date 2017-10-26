@@ -1,5 +1,5 @@
 var VideoList = (videos) => (
-  //console.log('videos:', videos),
+
   <div className="video-list">
     {videos.data.map(item => <VideoListEntry item={item} clickfunction={videos.clickfunction.bind(this)}/>)}
   </div>

@@ -8,10 +8,11 @@ class App extends React.Component {
     };
   }
   
-  selectNewVideo(event) {
-    // console.log(event);
-    console.log('event.target:', event.target);
-    // console.log('event.value:', event.value);
+  selectNewVideo(event, n) {
+    // console.log('this.value:', this.value);
+    console.log('event:', event);
+    // console.log(n);
+    
     this.setState({
       videoDisplay: event
     });

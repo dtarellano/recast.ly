@@ -1,7 +1,5 @@
 var VideoPlayer = (data) => (
-  console.log('data.video:', data.video),
-  console.log('data:', data),
-  console.log('data.video.id.videoId:', data.video.id.videoId),
+
   <div className="video-player">
     <div className="embed-responsive embed-responsive-16by9">
       <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${data.video.id.videoId}`} allowFullScreen></iframe>
