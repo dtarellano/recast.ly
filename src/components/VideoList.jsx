@@ -1,7 +1,7 @@
 var VideoList = (videos) => (
 
   <div className="video-list">
-    {videos.data.map(item => <VideoListEntry item={item} clickfunction={videos.clickfunction.bind(this)}/>)}
+    {videos.data.map(item => <VideoListEntry item={item} clickfunction={videos.clickfunction}/>)}
   </div>
 );
 
