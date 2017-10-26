@@ -52,7 +52,7 @@ class App extends React.Component {
       part: 'snippet',
       type: 'video'
     };
-    searchYouTube(data, this.callback);
+    _.debounce(searchYouTube(data, this.callback), 500);
   }
   
   selectNewVideo(event, n) {

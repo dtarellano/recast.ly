@@ -1,6 +1,6 @@
 var Search = (query) => (
   <div className="search-bar form-inline">
-    <input className="form-control" type="text" />
+    <input className="form-control" type="text" onChange={() => query.clickhandler($('.form-control').val())}/>
     <button className="btn hidden-sm-down" onClick={() => query.clickhandler($('.form-control').val())}>
       <span className="glyphicon glyphicon-search"></span>
     </button>
